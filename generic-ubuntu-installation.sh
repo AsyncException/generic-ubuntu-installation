@@ -1,5 +1,5 @@
 #!/bin/sh
-#install by using sh -c "$(curl -fsSL https://raw.githubusercontent.com/AsyncException/generic-ubuntu-installation/main/generic-ubuntu-installation.sh?token=GHSAT0AAAAAACNR5375R3GXXOEDJGCWFB7UZPR2HYQ)"
+#install by using sh -c "$(curl -fsSL https://raw.githubusercontent.com/AsyncException/generic-ubuntu-installation/main/generic-ubuntu-installation.sh)"
 
 #update system
 sudo apt update
