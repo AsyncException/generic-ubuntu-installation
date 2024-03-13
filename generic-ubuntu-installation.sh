@@ -7,13 +7,13 @@ sudo apt upgrade -y
 
 #install curl
 installcount=$(apt list curl | grep curl --count)
-if [ installcount -eq 0 ] then
+if [ "$installcount" -eq 0 ]; then
     sudo apt install curl -y
 fi
 
 #install git
 installcount=$(apt list git | grep git --count)
-if [ installcount -eq 0 ] then
+if [ "$installcount" -eq 0 ]; then
     sudo apt install git -y
 fi
 
@@ -21,7 +21,7 @@ clear
 
 #installing zsh and make it the default shell
 installcount=$(apt list zsh | grep zsh --count)
-if [ installcount -eq 0 ] then
+if [ "$installcount" -eq 0 ]; then
     sudo apt install zsh -y
 fi
 
