@@ -6,13 +6,13 @@ sudo apt update
 sudo apt upgrade -y
 
 #install curl
-installcount=$(apt list curl | grep curl --count)
+installcount=$(apt list curl --installed | grep curl --count)
 if [ "$installcount" -eq 0 ]; then
     sudo apt install curl -y
 fi
 
 #install git
-installcount=$(apt list git | grep git --count)
+installcount=$(apt list git --installed | grep git --count)
 if [ "$installcount" -eq 0 ]; then
     sudo apt install git -y
 fi
@@ -20,7 +20,7 @@ fi
 clear
 
 #installing zsh and make it the default shell
-installcount=$(apt list zsh | grep zsh --count)
+installcount=$(apt list zsh --installed | grep zsh --count)
 if [ "$installcount" -eq 0 ]; then
     sudo apt install zsh -y
 fi
@@ -31,7 +31,7 @@ clear
 echo "enter username"
 read USER
 
-sudo adduser $USER --gecos "" -s /usr/bin/zsh
+sudo adduser $USER --gecos "" --shell /usr/bin/zsh
 sudo adduser $USER sudo
 
 clear
