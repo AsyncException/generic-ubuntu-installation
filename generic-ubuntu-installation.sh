@@ -27,10 +27,10 @@ fi
 
 clear
 
+#add user and add it to sudo group
 echo "enter username"
 read USER
 
-#add user and add it to sudo group
 sudo adduser $USER --gecos "" -s /usr/bin/zsh
 sudo adduser $USER sudo
 
