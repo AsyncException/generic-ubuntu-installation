@@ -1,22 +1,32 @@
 #!/bin/sh
-#install by using sh -c "$(curl -fsSL https://github.com/AsyncException/generic-ubuntu-installation/blob/main/generic-ubuntu-installation.sh)"
+#install by using sh -c "$(curl -fsSL https://raw.githubusercontent.com/AsyncException/generic-ubuntu-installation/main/generic-ubuntu-installation.sh?token=GHSAT0AAAAAACNR5375R3GXXOEDJGCWFB7UZPR2HYQ)"
 
 #update system
 sudo apt update
-sudo apt upgrade
+sudo apt upgrade -y
 
 #install git
-sudo apt install git
+sudo apt install git -y
+
+clear
 
 #installing zsh and make it the default shell
-sudo apt install zsh
+sudo apt install zsh -y
 chsh -s $(which zsh)
 
-#Install Oh my zsh and download the correct config
-cd ~
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-curl -O https://github.com/AsyncException/generic-ubuntu-installation/blob/main/.zshrc
+clear
 
 #add user and add it to sudo group
-sudo adduser async
+sudo adduser async --gecos ""
 sudo adduser async sudo
+
+clear
+
+#Install Oh my zsh and download the correct config
+cd /home/async
+export RUNZSH="no"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+curl -O https://raw.githubusercontent.com/AsyncException/generic-ubuntu-installation/main/.zshrc
+
+#disable root
+sudo passwd -l root
