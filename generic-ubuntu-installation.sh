@@ -17,7 +17,7 @@ chsh -s $(which zsh)
 clear
 
 #add user and add it to sudo group
-sudo adduser async --gecos ""
+sudo adduser async --gecos "" -s /usr/bin/zsh
 sudo adduser async sudo
 
 clear
@@ -26,6 +26,7 @@ clear
 cd /home/async
 export RUNZSH="no"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+cp -r ~/.oh-my-zsh /home/async/.oh-my-zsh
 curl -O https://raw.githubusercontent.com/AsyncException/generic-ubuntu-installation/main/.zshrc
 
 #disable root
