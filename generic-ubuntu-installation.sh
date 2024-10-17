@@ -33,7 +33,7 @@ fi
 clear
 
 #install sshd
-installcount=$(apt list openssh-server --installed | grep zsh --count)
+installcount=$(apt list openssh-server --installed | grep openssh-server --count)
 if [ "$installcount" -eq 0 ]; then
     echo -e "\033[33;36m Installing zsh"
     sudo apt -qq install openssh-server -y
