@@ -32,6 +32,15 @@ fi
 
 clear
 
+#install sshd
+installcount=$(apt list openssh-server --installed | grep zsh --count)
+if [ "$installcount" -eq 0 ]; then
+    echo -e "\033[33;36m Installing zsh"
+    sudo apt -qq install openssh-server -y
+fi
+
+clear
+
 #add user and add it to sudo group
 echo -e "\033[33;36m Creating useraccount"
 echo "enter username:"
